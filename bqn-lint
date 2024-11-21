@@ -15,7 +15,7 @@ title ← {
 
 replacements ← ⟨⟨"0≠≠", "×≠"⟩⟩ # TODO add more
 
-CheckReplacement ← { f‿(t‿r)𝕊l‿i: 
+CheckReplacement ← { f‿(t‿r)𝕊i‿l:
     m ← t⍷l
     { ¬∨´m ? "" ; 
         •Out "In "∾f∾":"
@@ -29,7 +29,7 @@ CheckReplacement ← { f‿(t‿r)𝕊l‿i:
 
 LintSingleFile ← { 𝕊file:
     l ← •file.Lines 𝕩
-    {(file⋈𝕩)⊸CheckReplacement¨(⋈¨⟜(↕∘≠)l)}¨replacements
+    {(file⋈𝕩)⊸CheckReplacement¨(↕∘≠⊸(⋈¨)l)}¨replacements
 }
 
 main ← {
