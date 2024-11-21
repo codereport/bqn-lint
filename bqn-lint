@@ -8,8 +8,9 @@ fn ⇐ •Import "../bqn-code/lib/fun.bqn"
 nl ← @+10
 
 title ← {
-    d ← "__↑" 
-    nl∾(Red d)∾Green " bqn-lint "∾(Red ⌽d)∾nl
+    c ← Green‿Yellow‿Red # colors
+    a ← "↑↑↑"            # arrows
+    nl∾(∾c{𝕎𝕩}¨a)∾Green " bqn-test "∾(∾c{𝕎𝕩}¨○⌽a)∾nl
 }
 
 replacements ← ⟨⟨"0≠≠", "×≠"⟩⟩ # TODO add more
@@ -21,7 +22,7 @@ CheckReplacement ← { f‿(t‿r)𝕊l‿i:
         •Out "  Line "∾(•Fmt i)∾":"
         •Out "    "∾(Red t) s.Join t s.Split l
         •Out "    "∾ Yellow " ↑"⊏˜t fn.FindFull l
-        •Out "    "∾(" "/˜⊑/t⍷l)∾(Yellow "this can be: ")∾Green r
+        •Out "    "∾(" "/˜⊑/m)∾(Yellow "this can be: ")∾Green r
         •Out ⟨⟩
     }
 }
