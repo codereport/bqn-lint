@@ -21,8 +21,7 @@ CheckReplacement ← { f‿(t‿r)𝕊l‿i:
         •Out "  Line "∾(•Fmt i)∾":"
         •Out "    "∾(Red t) s.Join t s.Split l
         •Out "    "∾ Yellow " ↑"⊏˜t fn.FindFull l
-        n ← ⊑/t⍷l
-        •Out "    "∾(n/" ")∾(Yellow "this can be: ")∾Green r
+        •Out "    "∾(" "/˜⊑/t⍷l)∾(Yellow "this can be: ")∾Green r
         •Out ⟨⟩
     }
 }
