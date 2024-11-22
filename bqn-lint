@@ -1,16 +1,16 @@
 #!/usr/bin/env bqn
 
-⟨Green, Yellow, Red⟩ ⇐ •Import "../bqn-color/color.bqn"
+c  ⇐ •Import "../bqn-color/color.bqn"
 s  ⇐ •Import "../bqn-code/lib/string.bqn"
 fs ⇐ •Import "../bqn-code/lib/file_system.bqn"
 fn ⇐ •Import "../bqn-code/lib/fun.bqn"
 
-nl ← @+10
+nl     ← @+10
+colors ← c.Green‿c.Yellow‿c.Red
 
 title ← {
-    c ← Green‿Yellow‿Red # colors
-    a ← "↑↑↑"            # arrows
-    nl∾(∾c{𝕎𝕩}¨a)∾Green " bqn-test "∾(∾c{𝕎𝕩}¨○⌽a)∾nl
+    a ← "↑↑↑" # arrows
+    nl∾(∾colors{𝕎𝕩}¨a)∾c.Green " bqn-test "∾(∾colors{𝕎𝕩}¨○⌽a)∾nl
 }
 
 replacements ← ⟨⟨"0≠≠", "×≠"⟩⟩ # TODO add more
@@ -20,9 +20,9 @@ CheckReplacement ← { f‿(t‿r)𝕊i‿l:
     { ¬∨´m ? "" ; 
         •Out "In "∾f∾":"
         •Out "  Line "∾(•Fmt i)∾":"
-        •Out "    "∾(Red t) s.Join t s.Split l
-        •Out "    "∾ Yellow " ↑"⊏˜t fn.FindFull l
-        •Out "    "∾(" "/˜⊑/m)∾(Yellow "this can be: ")∾Green r
+        •Out "    "∾(c.Red t) s.Join t s.Split l
+        •Out "    "∾ c.Yellow " ↑"⊏˜t fn.FindFull l
+        •Out "    "∾(" "/˜⊑/m)∾(c.Yellow "this can be: ")∾c.Green r
         •Out ⟨⟩
     }
 }
@@ -34,7 +34,7 @@ LintSingleFile ← { 𝕊file:
 
 main ← {
     •Out title
-    (Red "Must provide directory (`pwd` for current)") ! 0≠≠•args
+    (c.Red "Must provide directory (`pwd` for current)") ! 0≠≠•args
     d ← 0⊑•args  # directory
     f ← fs.ListRecursiveBQNFiles d
     LintSingleFile¨f
