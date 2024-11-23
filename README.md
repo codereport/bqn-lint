@@ -33,4 +33,4 @@ export PATH=$PATH:/home/cph/bqn-lint
 
 ### Demo
 
-![image](https://github.com/user-attachments/assets/bb757200-f515-43ff-98b1-0fe5807ee5e1)
+![2024-11-2221-38-58-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/de46609f-6aed-4cf4-98c4-7ea5e324180d)
