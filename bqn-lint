@@ -38,7 +38,7 @@ FixSingleFile ← { 𝕊f:
     ts ← ⊑¨replacements # targets
     n  ← +´∾⥊ts⍷⌜l
     𝕩 •file.Lines l {t‿r𝕊𝕩: (r s.Join t s.Split ⊢)¨𝕩}´ replacements
-    { 0<≠n ? •Out "In "∾f∾": "∾c.Green (•Fmt n)∾" fix"∾{ n > 1 ? "es" ; "" } ; ∞ }
+    { ×n ? •Out "In "∾f∾": "∾c.Green (•Fmt n)∾" fix"∾{ n > 1 ? "es" ; "" } ; ∞ }
 }
 
 main ← {
