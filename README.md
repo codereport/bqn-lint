@@ -22,8 +22,8 @@ A simple linter for [BQN](https://mlochbaum.github.io/BQN).
 #### Run from command line
 
 ```bash
-bqn-lint `pwd`       # run this to show lints
-bqn-lint `pwd` --fix # this is verbose mode
+bqn-lint .       # run this to show lints
+bqn-lint . --fix # this is verbose mode
 ```
 
 Note, after `git clone`-ing this repo, you will probably want to put the `bqn-lint` script on your path:

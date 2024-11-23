@@ -43,8 +43,8 @@ FixSingleFile ← { 𝕊f:
 
 main ← {
     •Out title
-    (c.Red "Must provide directory (`pwd` for current)") ! 0≠≠•args
-    d   ← 0⊑•args  # directory
+    (c.Red "Must provide directory") ! 0≠≠•args
+    d   ← { "."≡0⊑•args ? •wdpath ; 0⊑•args } # directory
     fix ← 1<≠•args # verbose
     { fix ? (c.Red "2nd argument must be '--fix' (if specified)") ! "--fix"≡⊑1⊏•args ; ∞ }
     f ← fs.ListRecursiveBQNFiles d
