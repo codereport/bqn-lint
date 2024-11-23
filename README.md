@@ -17,4 +17,20 @@
 
 A simple linter for [BQN](https://mlochbaum.github.io/BQN).
 
+### Usage
+
+#### Run from command line
+
+```bash
+bqn-lint `pwd`       # run this to show lints
+bqn-lint `pwd` --fix # this is verbose mode
+```
+
+Note, after `git clone`-ing this repo, you will probably want to put the `bqn-lint` script on your path:
+```bash
+export PATH=$PATH:/home/cph/bqn-lint
+```
+
+### Demo
+
 ![image](https://github.com/user-attachments/assets/bb757200-f515-43ff-98b1-0fe5807ee5e1)
