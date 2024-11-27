@@ -1,9 +1,9 @@
 #!/usr/bin/env bqn
 
-c  ⇐ •Import "../bqn-color/color.bqn"
-s  ⇐ •Import "../bqn-code/lib/string.bqn"
-fs ⇐ •Import "../bqn-code/lib/file_system.bqn"
-fn ⇐ •Import "../bqn-code/lib/fun.bqn"
+c  ⇐ •Import "dep/color.bqn"
+s  ⇐ •Import "dep/string.bqn"
+fs ⇐ •Import "dep/file_system.bqn"
+fn ⇐ •Import "dep/fun.bqn"
 
 nl     ← @+10
 colors ← c.Green‿c.Yellow‿c.Red
