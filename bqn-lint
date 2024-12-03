@@ -1,20 +1,23 @@
 #!/usr/bin/env bqn
 
-c  ⇐ •Import "dep/color.bqn"
-s  ⇐ •Import "dep/string.bqn"
-fs ⇐ •Import "dep/file_system.bqn"
-fn ⇐ •Import "dep/fun.bqn"
+c  ⇐ •Import "deps/color.bqn"
+s  ⇐ •Import "deps/string.bqn"
+fs ⇐ •Import "deps/file_system.bqn"
+fn ⇐ •Import "deps/fun.bqn"
 
 nl     ← @+10
 colors ← c.Green‿c.Yellow‿c.Red
 
 title ← {
     a ← "↑↑↑" # arrows
-    nl∾(∾colors{𝕎𝕩}¨a)∾c.Green " bqn-test "∾(∾colors{𝕎𝕩}¨○⌽a)∾nl
+    nl∾(∾colors{𝕎𝕩}¨a)∾c.Green " bqn-lint "∾(∾colors{𝕎𝕩}¨○⌽a)∾nl
 }
 
 replacements ← ⟨⟨"0≠≠", "×≠"⟩,
-                ⟨"0<≠", "×≠"⟩⟩ # TODO add more
+                ⟨"0<≠", "×≠"⟩,
+                ⟨"¬=",  "≠"⟩, # TODO this could break trains
+                ⟨"¬∘=",  "≠"⟩,
+                ⟨"(¬=)",  "≠"⟩⟩ # TODO add more
 
 CheckReplacement ← { f‿(t‿r)𝕊i‿l:
     m ← t⍷l
